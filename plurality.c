@@ -83,19 +83,6 @@ void print_winner(void)
     string winner=candidates[k].name;
     string tie="";
     for (k=0;k<candidate_count;k++){
-        if (candidates[k+1].votes==candidates[k].votes){
-        n = (int)(tie[0]);
-        if (n==0){
-        tie = strcat(candidates[k].name," ");
-        tie = strcat(tie,candidates[k+1].name);
-        winner = tie;
-        }
-        else {
-        tie = strcat(tie," ");
-        tie = strcat(tie,candidates[k+1].name);
-        winner = tie;
-        }
-        }
         if (candidates[k+1].votes>candidates[k].votes){
         winner = candidates[k+1].name;
         }

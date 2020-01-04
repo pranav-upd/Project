@@ -86,6 +86,22 @@ void print_winner(void)
         if (candidates[k+1].votes>candidates[k].votes){
         winner = candidates[k+1].name;
         }
+        else {
+        winner = candidates[k].name;
+        }
+        if (candidates[k+1].votes==candidates[k].votes){
+        n = (int)(tie[0]);
+        if (n==0){
+        tie = strcat(candidates[k].name," ");
+        tie = strcat(tie,candidates[k+1].name);
+        winner = tie;
+        }
+        else {
+        tie = strcat(tie," ");
+        tie = strcat(tie,candidates[k+1].name);
+        winner = tie;
+        }
+        }
     }
     printf("%s\n",winner);
     return;

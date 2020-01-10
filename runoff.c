@@ -24,7 +24,6 @@ candidate candidates[MAX_CANDIDATES];
 // Numbers of voters and candidates
 int voter_count;
 int candidate_count;
-int k;
 
 // Function prototypes
 bool vote(int voter, int rank, string name);
@@ -80,7 +79,6 @@ int main(int argc, string argv[])
                 return 4;
             }
 
-            preferences[i][j]=k;
         }
         printf("\n");
     }
@@ -130,8 +128,11 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
+    int k;
     for (k=0;k<candidate_count;k++){
     if (strcmp(candidates[k].name,name)==0){
+
+        preferences[voter][rank] = k;
 
         return true;
     }

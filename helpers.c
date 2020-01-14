@@ -128,7 +128,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             j2 = j2 + 1;
             }
             }
-            avg2 = avg2/(c2*r2);
             a = avg2;
             if (a>255){
             a = 255;
@@ -136,7 +135,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtRed=a;
             image[i][j].rgbtGreen=a;
             image[i][j].rgbtBlue=a;
-            printf("%d%d%d",r,g,b);
+            printf("%d\t",a);
         }
     }
     printf("\n");

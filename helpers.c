@@ -87,9 +87,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    int r=0,g=0,b=0,a=0,i2=0,j2=0,r1=0,c1=0,r2=3,c2=0;
+    int r=0,g=0,b=0,a=0,i2=0,j2=0,r1=0,c1=0;
     for(int i=0;i<height;i++){
         for(int j=0;j<width;j++){
+            int r2=3,c2=3;
             float avg=0,avg2=0;
             //...
             i2 = i;
@@ -108,13 +109,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 j2 = j2-1;
                 r2 = 2;
             }
-            if (i2>0&&(i2+1)!=height){
+            if (i2!=0){
                 i2 = i2-1;
-                c2 = 3;
             }
-            if (j2>0&&(j2+1)!=width){
+            if (j2!=0){
                 j2 = j2-1;
-                r2 = 3;
             }
             for(c1=0;c1<c2;c1++){
             for (r1=0;r1<r2;r1++){
@@ -128,14 +127,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             j2 = j2 + 1;
             }
             }
+            avg2 = avg2/(r2*c2);
             a = avg2;
-            if (a>255){
-            a = 255;
-            }
             image[i][j].rgbtRed=a;
             image[i][j].rgbtGreen=a;
             image[i][j].rgbtBlue=a;
-            printf("%d\t",a);
         }
     }
     printf("\n");

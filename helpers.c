@@ -148,7 +148,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtRed=a;
             image[i][j].rgbtGreen=a;
             image[i][j].rgbtBlue=a;
-            printf("%d%d\t",c1,r1);
         }
     }
     return;

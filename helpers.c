@@ -95,15 +95,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         image2[m][n].rgbtBlue = image[m][n].rgbtBlue;
         }
     }
-    int r=0,g=0,b=0,a=0,i2=0,j2=0,j3=0,r1=0,c1=0,r2=0,c2=0;
-    float avg=0,avg2=0;
+    int i2=0,j2=0,j3=0,r1=0,c1=0,r2=0,c2=0;
+    float r=0,g=0,b=0;
     for(int i=0;i<height;i++){
         for(int j=0;j<width;j++){
              r=0;
              g=0;
              b=0;
-             avg=0;
-             avg2=0;
              c2 = 3;
              r2 = 3;
             //
@@ -130,24 +128,23 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             j3 = j2;
             for(c1=0;c1<c2;c1++){
             for (r1=0;r1<r2;r1++){
-            r = image2[i2][j2].rgbtRed;
-            g = image2[i2][j2].rgbtGreen;
-            b = image2[i2][j2].rgbtBlue;
-            avg = r+g+b;
-            avg = avg/3;
-            avg = round(avg);
-            avg2 = avg2 + avg;
+            r = r + image2[i2][j2].rgbtRed;
+            g = g + image2[i2][j2].rgbtGreen;
+            b = b + image2[i2][j2].rgbtBlue;
             j2 = j2 + 1;
             }
             i2 = i2+1;
             j2 = j3;
             }
-            avg2 = avg2/(r2*c2);
-            avg2 = round(avg2);
-            a = avg2;
-            image[i][j].rgbtRed=a;
-            image[i][j].rgbtGreen=a;
-            image[i][j].rgbtBlue=a;
+            r = r/(r2*c2);
+            g = g/(r2*c2);
+            b = b/(r2*c2);
+            r = round(r);
+            g = round(g);
+            b = round(b);
+            image[i][j].rgbtRed=r;
+            image[i][j].rgbtGreen=g;
+            image[i][j].rgbtBlue=b;
         }
     }
     return;

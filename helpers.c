@@ -130,9 +130,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             j3 = j2;
             for(c1=0;c1<c2;c1++){
             for (r1=0;r1<r2;r1++){
-            r = image[i2][j2].rgbtRed;
-            g = image[i2][j2].rgbtGreen;
-            b = image[i2][j2].rgbtBlue;
+            r = image2[i2][j2].rgbtRed;
+            g = image2[i2][j2].rgbtGreen;
+            b = image2[i2][j2].rgbtBlue;
             avg = r+g+b;
             avg = avg/3;
             avg2 = avg2 + avg;
@@ -143,9 +143,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             avg2 = avg2/(r2*c2);
             a = avg2;
-            image2[i][j].rgbtRed=a;
-            image2[i][j].rgbtGreen=a;
-            image2[i][j].rgbtBlue=a;
+            image[i][j].rgbtRed=a;
+            image[i][j].rgbtGreen=a;
+            image[i][j].rgbtBlue=a;
             printf("%d%d\t",c1,r1);
         }
     }

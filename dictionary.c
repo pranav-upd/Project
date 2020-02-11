@@ -149,12 +149,6 @@ bool unload(void)
             table[i] = table[i]->next;
             free(buffer);
         }
-        //..
-        while(start[i]!=NULL){
-            buffer = start[i];
-            start[i] = start[i]->next;
-            free(buffer);
-        }
     }
     return true;
 }

@@ -74,7 +74,6 @@ bool load(const char *dictionary)
     }
     //..
     for (int j=0; j<26; j++){
-    start[j] = malloc(sizeof(node));
     start[j] = table[j];
     }
     //..

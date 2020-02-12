@@ -71,6 +71,8 @@ bool load(const char *dictionary)
     //..
     for (int i=0; i<26; i++){
     table[i] = malloc(sizeof(node));
+    memset(table[i]->word,0,sizeof(table[i]->word));
+    table[i]->next = NULL;
     }
     //..
     for (int j=0; j<26; j++){

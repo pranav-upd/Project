@@ -7,6 +7,7 @@ t = 0
 sc = 0
 b = 1
 w = 0
+index = 0
 for s in user_input:
     if s != " ":
         if bool(b) == True:
@@ -21,9 +22,20 @@ for s in user_input:
     if s == " ":
         b = 1
 #..
-print(l)
-print(sc)
-print(w)
+l = l/w
+l = l * 100
+l = round(l, 2)
+sc = sc/w
+sc = sc * 100
+sc = round(sc, 2)
+index = 0.0588 * l - 0.296 * sc - 15.8
+index = round(index)
+if index >= 16:
+    print("Grade 16+")
+elif index < 1:
+    print("Before Grade 1")
+else:
+    print(f"Grade {index}")
 
 
 

@@ -23,7 +23,6 @@ for data in csv_file:
         if a != "name":
            d = int(data[a])
            n = c.count(a)
-           print(d,n)
            if d == n:
                t = t + 1
            if t == ln:

@@ -1,4 +1,4 @@
-SELECT movies.title, ratings.rating
+SELECT movies.title
 FROM  (((movies
 INNER JOIN stars ON movies.id = stars.movie_id)
 INNER JOIN people ON stars.person_id = people.id)

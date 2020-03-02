@@ -1,0 +1,27 @@
+.site_background {
+    width: 100%;
+    height: 500px
+}
+
+
+.nav-link {
+    font-size: 25px;
+    color: grey;
+}
+
+.navbar-brand {
+    font-size: 40px;
+}
+
+.body-text {
+    font-size: 20px;
+}
+
+.body-header {
+    text-align: center;
+}
+
+.views-counter {
+    font-size: 12.5px;
+    text-align: center;
+}

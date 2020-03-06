@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <select id="Symbol" name="symbol">
+                {% for item in row2 -%}
+                <option value={{item.symbol}}>{{item.symbol}}</option>
+                {%- endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="quantity" placeholder="Quantity" type="number" min="1" step="1" oninput="validity.valid||(value='');">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

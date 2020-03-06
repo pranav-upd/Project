@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+       {% for item in row -%}
+      <tr>
+        <td>{{item.symbol}}</td>
+        <td>{{item.stockname}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{"$%.2f"|format(item.price)}}</td>
+        <td>{{"$%.2f"|format(item.price*item.quantity)}}</td>
+      </tr>
+      {%- endfor %}
+      <tr>
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{cash}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

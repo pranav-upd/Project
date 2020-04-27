@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>{% block title %}{% endblock %}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        .navbar-brand {
+            font-size: 30px;
+        }
+
+        .nav-item {
+            font-size: 20px;
+        }
+        main .form-control {
+            display: inline-block;
+            width: auto;
+
+        }
+
+        main {
+            overflow-x: auto;
+            text-align: center;
+        }
+    </style>
+    <body style="background-color:powderblue;">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Weight Planner</a>
+        <!-- Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- End of button-->
+        <!-- Start of the dropdown menu -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link {% block home %}{% endblock %}" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link {% block lose %}{% endblock %}" href="/lose">Lose Weight</a></li>
+                <li class="nav-item"><a class="nav-link {% block gain %}{% endblock %}" href="/gain">Gain Mass!</a></li>
+                <li class="nav-item"><a class="nav-link {% block contact %}{% endblock %}" href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        </nav>
+        </div>
+        <main class="container-fluid">
+            {% block main %}{% endblock %}
+        </main>
+    </body>
+</html>

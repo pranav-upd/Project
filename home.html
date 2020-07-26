@@ -1,0 +1,71 @@
+{% extends "theme.html" %}
+
+{% block title %}
+   Home
+{% endblock %}
+
+{% block home %}
+  active
+{% endblock %}
+{% block main %}
+<style>
+    label {
+        display: inline-block;
+        width: 140px;
+        text-align: right;
+   }
+</style>
+<br><br><br>
+<p>So, you want to Lose or gain weight. Well, you`re willing to make a change and that says a lot about you.</p>
+<br>
+<p>Before starting you may already know this but here it is anyway, your body burns a number of calories every day. The food you consume has calories in it. Fat has 9 calories per gram, carbohydrates and proteins have 4 calories per gram and alcohol has 7 calories per gram.</p>
+<br>
+<p>You can track your daily calories using an application using myfitnesspal. I do highly recommend getting a kitchen food scale. It helps you track your calories more accurately.</p>
+<br>
+<p>Before Losing or gaining weight. You need to find your maintenance calories. Maintenance calories is the number of calories you can consume in a day without experiencing any significant weight. Your maintenance calories are near your total daily expenditure (TDEE). TDEE is the total number of calories you burn in a day. Your TDEE is dependent on two factors – 1) Your Basal Metabolic Rate or BMR which is the number of calories you would burn if you rested all day. Your BMR is generally most of your Daily expenditure (unless you`re working out like Michael Phelps). The second factor is dependent on how active you are during the day. If you have an office job which consists of sitting in a chair for most of the day, you are not going to burn a lot of calories. Adding a cardio or a gym workout can increase the number of calories you burn. Walking for an hour, you can burn about 200 calories approximately.</p>
+<br>
+<p>The Calculator below uses the <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/"> Mifflin-St Jeor Equation</a> for finding out your BMR</p>
+<br>
+<h3>Here is a BMR calculator. You can find your approximate BMR.</h3>
+<br>
+<form action="/" method="post">
+    <p style="color:green">{{bmr}}</p>
+    <p style="color:red">{{errmsg}}</p>
+    <table align="center">
+    <tr>
+        <td><label>Height (in cm)&nbsp;&nbsp; </label></td>
+        <td><input name="height" placeholder="Height" class="form-control" type="number" step="0.01" min="0"></td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td><label>Weight (in kg)&nbsp;&nbsp; </label></td>
+        <td><input name="weight" placeholder="Weight" class="form-control" type="number" step="0.01" min="0"></td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td><label>Age&nbsp;&nbsp; </label></td>
+        <td><input name="age" placeholder="Age" class="form-control" type="number"></td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td><label>Gender&nbsp;&nbsp;</label></td>
+        <td><select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    </table>
+    <button class="btn btn-dark" type="submit">Calculate</button>
+    <br><br>
+</form>
+</div>
+{% endblock %}
